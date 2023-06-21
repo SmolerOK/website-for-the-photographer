@@ -1,16 +1,16 @@
-            <div class="grid portfoliogrid">
-            {{#each cover}}
-
-                <article class="hentry">
-                    <header class="entry-header">
-                        <div class="entry-thumbnail">
-                            <a href="/album/viewing/{{this.id}}"><img
-                                    src="/albums/series/{{this.id}}/{{this.name}}"
-                                    class="attachment-post-thumbnail size-post-thumbnail wp-post-image"/></a>
-                        </div>
-                        <button value="{{this.id}}" style="display:block; margin:0 auto;" onclick="deleteAlbum(this);">Удалить</button>
-                    </header>
-                </article>
-
-            {{/each}}
+<div class="grid portfoliogrid">
+    {{#each cover}}
+    <article class="hentry">
+        <header class="entry-header">
+            <div class="entry-thumbnail">
+                <a href="/album/viewing/{{this.id}}"><img src="/albums/series/{{this.id}}/{{this.name}}"
+                        class="attachment-post-thumbnail size-post-thumbnail wp-post-image" /></a>
             </div>
+            {{#if ../isAuth}}
+            <button value="{{this.id}}" style="display:block; margin:0 auto;"
+                onclick="deleteAlbum(this);">Удалить</button>
+            {{/if}}
+        </header>
+    </article>
+    {{/each}}
+</div>

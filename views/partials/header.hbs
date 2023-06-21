@@ -10,7 +10,9 @@
                 <li><a href="/">Альбомы</a></li>
                 <li><a href="/about">О себе</a></li>
                 <li><a href="/contacts">Контакты</a></li>
+                {{#if isAuth}}
                 <li><a href="/album/create">Добавить альбом</a></li>
+                {{/if}}
                 <li><a href="/login">Модератор</a></li>
             </ul>
         </div>
